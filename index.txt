@@ -70,22 +70,33 @@
         }
         .floating-text {
             position: fixed;
-            top: 50%; /* Centrado verticalmente */
-            left: 50%; /* Centrado horizontalmente */
-            transform: translate(-50%, -50%); /* Ajuste perfecto al centro */
             font-size: 3rem; /* Tamaño del texto */
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.2); /* Color blanco semitransparente */
-            animation: float 3s ease-in-out infinite; /* Animación de flotación */
+            color: rgba(255, 255, 255, 0.8); /* Color blanco semitransparente */
             pointer-events: none; /* No bloquea clics en otros elementos */
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+            animation: float-text 20s linear infinite; /* Animación de recorrido */
         }
-        @keyframes float {
-            0%, 100% {
-                transform: translate(-50%, -50%) translateY(-10px);
+        @keyframes float-text {
+            0% {
+                top: -10%;
+                left: -10%;
+            }
+            25% {
+                top: -10%;
+                left: 110%;
             }
             50% {
-                transform: translate(-50%, -50%) translateY(10px);
+                top: 110%;
+                left: 110%;
+            }
+            75% {
+                top: 110%;
+                left: -10%;
+            }
+            100% {
+                top: -10%;
+                left: -10%;
             }
         }
     </style>
