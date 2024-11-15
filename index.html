@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOSEPH RADIO - Radio en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: url('radio2.jpg') no-repeat center center fixed; /* Imagen de fondo */
+            background-size: cover; /* Imagen cubre toda la pantalla */
+            color: #fff; /* Texto blanco */
+            margin: 0;
+            min-height: 100vh;
+            justify-content: center; /* Centra el contenido verticalmente */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar el bloque */
+            margin: 20px 0;
+        }
+        .slogan {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #ccc; /* Color gris claro */
+            margin-top: 5px;
+            margin-bottom: 5px; /* Espacio reducido entre slogans */
+        }
+        .player-container {
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+            border: 2px solid #555;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar el reproductor */
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .social-links a img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p class="slogan">SOMOS JOSEFINOS, SOMOS TU RADIO</p>
+        <p class="slogan">Disfruta de nuestra transmisión en línea 24/7</p>
+    </header>
+
+    <div class="player-container">
+        <p>Reproduciendo ahora:</p>
+        <!-- Cambia el URL en "src" con la URL de tu transmisión en línea -->
+        <audio controls autoplay>
+            <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+        </audio>
+    </div>
+
+    <!-- Redes sociales debajo del reproductor -->
+    <div class="social-links">
+        <a href="https://www.facebook.com/https://www.facebook.com/iosephrad/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.tiktok.com/@ioseph.radio.sv?lang=es" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/TikTok_logo_2021.svg" alt="TikTok">
+        </a>
+    </div>
+</body>
+</html>
