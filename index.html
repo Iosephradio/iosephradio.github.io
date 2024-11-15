@@ -63,7 +63,11 @@
         .social-text a:hover {
             text-decoration: underline; /* Subrayado al pasar el cursor */
         }
-        /* Estilo para el texto flotante */
+        .hidden-link {
+            color: transparent; /* Hace invisible el texto */
+            text-shadow: none; /* Quita cualquier sombra */
+            pointer-events: auto; /* Permite clics */
+        }
         .floating-text {
             position: fixed;
             top: 50%; /* Centrado verticalmente */
@@ -108,7 +112,9 @@
     <div class="social-text">
         <p>Contáctanos:</p>
         <p><a href="https://www.facebook.com/iosephrad" target="_blank">Facebook</a></p>
-        <p><a href="https://wa.me/50372056495" target="_blank">WhatsApp: 72056495</a></p>
+        <p><a href="https://www.tiktok.com/@ioseph.radio.sv" target="_blank">TikTok</a></p>
+        <!-- Enlace invisible para WhatsApp -->
+        <p><a href="https://wa.me/50372056495" class="hidden-link" target="_blank">WhatsApp</a></p>
     </div>
 </body>
 </html>
