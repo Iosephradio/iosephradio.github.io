@@ -6,57 +6,74 @@
     <title>IOSEPH RADIO - Radio en Línea</title>
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: url('radio2.jpg') no-repeat center center fixed; /* Imagen de fondo */
-            background-size: cover; /* Imagen cubre toda la pantalla */
-            color: #fff; /* Texto blanco */
-            margin: 0;
-            min-height: 100vh;
             justify-content: center; /* Centra el contenido verticalmente */
-            overflow: hidden; /* Evita barras de scroll */
+            min-height: 100vh;
+            background: url('radio2.png') no-repeat center center fixed; /* Imagen de fondo centrada */
+            background-size: cover; /* Ajusta la imagen al tamaño del viewport */
+        }
+        .header-bar {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+            color: rgba(255, 255, 255, 0.9); /* Texto blanco con leve transparencia */
+            font-size: 2rem; /* Tamaño de la fuente */
+            font-weight: bold; /* Fuente en negrita */
+            position: fixed; /* Fijo en la parte superior */
+            top: 0;
+            z-index: 100; /* Asegura que esté siempre por encima del resto */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacarlo */
+        }
+        .content-wrapper {
+            position: relative;
+            width: 90%; /* Ocupa el 90% del ancho del viewport */
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.5); /* Fondo oscuro más transparente */
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más tenue */
+            margin-top: 80px; /* Espacio para evitar el encabezado fijo */
         }
         header {
             text-align: center;
             padding: 20px;
-            width: 100%;
-            max-width: 800px;
-            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar el bloque */
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
         .slogan {
             font-size: 1.2rem;
             font-style: italic;
-            color: #ccc; /* Color gris claro */
-            margin-top: 5px;
-            margin-bottom: 5px; /* Espacio reducido entre slogans */
+            color: rgba(255, 255, 255, 0.7); /* Texto blanco más transparente */
+            margin: 5px 0; /* Espacio reducido entre slogans */
         }
         .player-container {
-            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
-            border: 2px solid #555;
-            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo muy transparente */
+            border: 2px solid rgba(85, 85, 85, 0.5); /* Bordes semitransparentes */
+            padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar el reproductor */
             text-align: center;
-            width: 100%;
-            max-width: 500px;
-            margin-top: 20px;
+            margin: 0 auto; /* Centra el reproductor */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más tenue */
+            width: 300px; /* Tamaño reducido del reproductor */
         }
         audio {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 5px;
         }
         .social-text {
             margin-top: 20px;
             text-align: center;
             font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7); /* Texto blanco más transparente */
         }
         .social-text a {
-            color: #00ffcc; /* Color para los enlaces */
+            color: rgba(0, 255, 204, 0.8); /* Color para los enlaces más translúcido */
             text-decoration: none;
             font-weight: bold;
         }
@@ -70,51 +87,67 @@
         }
         .floating-text {
             position: fixed;
-            top: 50%; /* Centrado verticalmente */
-            left: 50%; /* Centrado horizontalmente */
-            transform: translate(-50%, -50%); /* Ajuste perfecto al centro */
-            font-size: 3rem; /* Tamaño del texto */
+            font-size: 1.5rem; /* Tamaño del texto */
             font-weight: bold;
-            color: rgba(255, 255, 255, 0.2); /* Color blanco semitransparente */
-            animation: float 3s ease-in-out infinite; /* Animación de flotación */
+            color: rgba(255, 255, 255, 0.6); /* Color blanco aún más transparente */
             pointer-events: none; /* No bloquea clics en otros elementos */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra más tenue */
+            animation: float-text 15s linear infinite; /* Animación para que flote */
         }
-        @keyframes float {
-            0%, 100% {
-                transform: translate(-50%, -50%) translateY(-10px);
+        @keyframes float-text {
+            0% {
+                top: -20%;
+                left: -20%;
+            }
+            25% {
+                top: -20%;
+                left: 120%;
             }
             50% {
-                transform: translate(-50%, -50%) translateY(10px);
+                top: 120%;
+                left: 120%;
+            }
+            75% {
+                top: 120%;
+                left: -20%;
+            }
+            100% {
+                top: -20%;
+                left: -20%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Encabezado fijo -->
+    <div class="header-bar">IOSEPH RADIO</div>
+
     <!-- Texto flotante -->
-    <div class="floating-text">IOSEPH RADIO℗</div>
+    <div class="floating-text">IOSEPH RADIO®</div>
 
-    <header>
-        <p class="slogan">SOMOS JOSEFINOS, SOMOS TU RADIO</p>
-        <p class="slogan">Disfruta de nuestra transmisión en línea 24/7</p>
-    </header>
+    <div class="content-wrapper">
+        <header>
+            <p class="slogan">SOMOS JOSEFINOS, SOMOS TU RADIO</p>
+            <p class="slogan">Disfruta de nuestra transmisión en línea 24/7</p>
+        </header>
 
-    <div class="player-container">
-        <p>Reproduciendo ahora:</p>
-        <!-- Cambia el URL en "src" con la URL de tu transmisión en línea -->
-        <audio controls autoplay>
-            <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
-            Tu navegador no soporta la reproducción de audio.
-        </audio>
-    </div>
+        <div class="player-container">
+            <p>Reproduciendo ahora:</p>
+            <!-- Cambia el URL en "src" con la URL de tu transmisión en línea -->
+            <audio controls autoplay>
+                <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
+                Tu navegador no soporta la reproducción de audio.
+            </audio>
+        </div>
 
-    <!-- Texto con enlaces a redes sociales -->
-    <div class="social-text">
-        <p>Contáctanos:</p>
-        <p><a href="https://www.facebook.com/iosephrad" target="_blank">Facebook</a></p>
-        <p><a href="https://www.tiktok.com/@ioseph.radio.sv" target="_blank">TikTok</a></p>
-        <!-- Enlace invisible para WhatsApp -->
-        <p><a href="https://wa.me/50372056495" class="hidden-link" target="_blank">WhatsApp</a></p>
+        <!-- Texto con enlaces a redes sociales -->
+        <div class="social-text">
+            <p>Contáctanos:</p>
+            <p><a href="https://www.facebook.com/iosephrad" target="_blank">Facebook</a></p>
+            <p><a href="https://www.tiktok.com/@ioseph.radio.sv" target="_blank">TikTok</a></p>
+            <!-- Enlace invisible para WhatsApp -->
+            <p><a href="https://wa.me/50372056495" class="hidden-link" target="_blank">WhatsApp</a></p>
+        </div>
     </div>
 </body>
 </html>
