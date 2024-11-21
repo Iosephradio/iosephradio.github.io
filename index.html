@@ -61,6 +61,27 @@
         audio {
             margin-top: 20px;
         }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Reducir el tamaño del título */
+            }
+            .logo img {
+                width: 150px; /* Reducir tamaño del logo */
+            }
+            .slogan {
+                font-size: 1.2rem; /* Ajustar tamaño del texto */
+            }
+            .social-links {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                width: 90%; /* Ancho mayor para botones en móviles */
+            }
+            .social-links a {
+                font-size: 1.1rem; /* Reducir tamaño de los botones */
+                padding: 12px; /* Ajustar el tamaño de los botones */
+            }
+        }
     </style>
 </head>
 <body>
