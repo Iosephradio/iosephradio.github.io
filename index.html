@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IOSEPH RADIO</title>
     <style>
-        /* Fondo negro con el logo centrado */
+        /* Fondo negro con diseño centrado */
         html, body {
             height: 100%; /* Cubre toda la pantalla */
             margin: 0;
@@ -19,21 +19,44 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la visibilidad */
+        }
         .logo {
             margin-bottom: 20px; /* Espaciado debajo del logo */
         }
+        .slogan {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px rgba(169, 169, 169, 0.7); /* Sombra gris para el texto */
+        }
         .social-links {
             margin-top: 20px;
+            display: grid; /* Usamos grid para crear las columnas */
+            grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+            gap: 10px; /* Espacio entre filas y columnas */
+            width: 80%; /* Ajusta el ancho para que se vea bien en móviles */
         }
         .social-links a {
-            margin: 0 15px;
+            display: block;
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #fff;
-            transition: color 0.3s;
+            padding: 10px;
+            border: 1px solid #fff; /* Bordes para simular botones */
+            border-radius: 8px; /* Bordes redondeados */
+            text-align: center; /* Centrar texto */
+            transition: background-color 0.3s, color 0.3s;
         }
         .social-links a:hover {
-            color: #00e676; /* Verde para hover (puedes cambiarlo) */
+            background-color: #00e676; /* Fondo verde en hover */
+            color: #000; /* Texto negro en hover */
         }
         audio {
             margin-top: 20px;
@@ -41,12 +64,20 @@
     </style>
 </head>
 <body>
+    <!-- Título en la parte superior -->
+    <h1>IOSEPH RADIO</h1>
+
     <!-- Logo centrado -->
     <div class="logo">
-        <img src="logoR.png" alt="Logo IOSEPH RADIO" width="300">
+        <img src="logoR.png" alt="Logo IOSEPH RADIO" width="200">
     </div>
 
-    <!-- Reproductor multimedia -->
+    <!-- Slogan entre el logo y el reproductor -->
+    <div class="slogan">
+        <p>UTILMENTE OCUPADOS 24/7</p>
+    </div>
+
+    <!-- Reproductor multimedia que se reproduce automáticamente -->
     <div>
         <audio controls autoplay>
             <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
@@ -54,13 +85,12 @@
         </audio>
     </div>
 
-    <!-- Accesos a redes sociales -->
+    <!-- Accesos a redes sociales en dos columnas -->
     <div class="social-links">
-        <p>Síguenos en nuestras redes:</p>
-        <a href="https://wa.me/72056495" target="_blank" aria-label="WhatsApp">🌐 WhatsApp</a>
-        <a href="https://facebook.com" target="https://www.facebook.com/iosephrad/" aria-label="Facebook">🌐 Facebook</a>
-        <a href="https://instagram.com" target="iosephradio_sv" aria-label="Instagram">🌐 Instagram</a>
-        <a href="https://www.tiktok.com" target=" ioseph.radio.sv" aria-label="TikTok">🌐 TikTok</a>
+        <a href="https://wa.me/72056495" target="_blank" aria-label="WhatsApp">WhatsApp</a>
+        <a href="https://www.facebook.com/iosephrad/" target="_blank" aria-label="Facebook">Facebook</a>
+        <a href="https://instagram.com/iosephradio_sv" target="_blank" aria-label="Instagram">Instagram</a>
+        <a href="https://www.tiktok.com/@ioseph.radio.sv" target="_blank" aria-label="TikTok">TikTok</a>
     </div>
 </body>
 </html>

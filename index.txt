@@ -43,7 +43,7 @@
 <body>
     <!-- Logo centrado -->
     <div class="logo">
-        <img src="logoR.png" alt="Logo IOSEPH RADIO" width="300">
+        <img src="logoR.png" alt="Logo IOSEPH RADIO" width="200">
     </div>
 
     <!-- Reproductor multimedia -->
