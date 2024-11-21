@@ -1,153 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IOSEPH RADIO - Radio en Línea</title>
+    <title>IOSEPH RADIO</title>
     <style>
-        body {
+        /* Fondo negro con el logo centrado */
+        html, body {
+            height: 100%; /* Cubre toda la pantalla */
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: center; /* Centra el contenido verticalmente */
-            min-height: 100vh;
-            background: url('radio2.jpg') no-repeat center center fixed; /* Imagen de fondo centrada */
-            background-size: cover; /* Ajusta la imagen al tamaño del viewport */
-        }
-        .header-bar {
-            width: 100%;
+            flex-direction: column; /* Elementos en columna */
+            color: #fff; /* Texto blanco */
+            font-family: Arial, sans-serif;
             text-align: center;
-            padding: 10px 0;
-            background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-            color: rgba(255, 255, 255, 0.9); /* Texto blanco con leve transparencia */
-            font-size: 2rem; /* Tamaño de la fuente */
-            font-weight: bold; /* Fuente en negrita */
-            position: fixed; /* Fijo en la parte superior */
-            top: 0;
-            z-index: 100; /* Asegura que esté siempre por encima del resto */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacarlo */
         }
-        .content-wrapper {
-            position: relative;
-            width: 90%; /* Ocupa el 90% del ancho del viewport */
-            max-width: 800px;
-            background: rgba(0, 0, 0, 0.5); /* Fondo oscuro más transparente */
-            padding: 20px;
-            border-radius: 10px; /* Bordes redondeados */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más tenue */
-            margin-top: 80px; /* Espacio para evitar el encabezado fijo */
+        .logo {
+            margin-bottom: 20px; /* Espaciado debajo del logo */
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .social-links {
+            margin-top: 20px;
         }
-        .slogan {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.7); /* Texto blanco más transparente */
-            margin: 5px 0; /* Espacio reducido entre slogans */
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #fff;
+            transition: color 0.3s;
         }
-        .player-container {
-            background-color: rgba(0, 0, 0, 0.3); /* Fondo muy transparente */
-            border: 2px solid rgba(85, 85, 85, 0.5); /* Bordes semitransparentes */
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 0 auto; /* Centra el reproductor */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más tenue */
-            width: 300px; /* Tamaño reducido del reproductor */
+        .social-links a:hover {
+            color: #00e676; /* Verde para hover (puedes cambiarlo) */
         }
         audio {
-            width: 100%;
-            margin-top: 5px;
-        }
-        .social-text {
             margin-top: 20px;
-            text-align: center;
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.7); /* Texto blanco más transparente */
-        }
-        .social-text a {
-            color: rgba(0, 255, 204, 0.8); /* Color para los enlaces más translúcido */
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .social-text a:hover {
-            text-decoration: underline; /* Subrayado al pasar el cursor */
-        }
-        .hidden-link {
-            color: transparent; /* Hace invisible el texto */
-            text-shadow: none; /* Quita cualquier sombra */
-            pointer-events: auto; /* Permite clics */
-        }
-        .floating-text {
-            position: fixed;
-            font-size: 1.5rem; /* Tamaño del texto */
-            font-weight: bold;
-            color: rgba(255, 255, 255, 0.6); /* Color blanco aún más transparente */
-            pointer-events: none; /* No bloquea clics en otros elementos */
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra más tenue */
-            animation: float-text 15s linear infinite; /* Animación para que flote */
-        }
-        @keyframes float-text {
-            0% {
-                top: -20%;
-                left: -20%;
-            }
-            25% {
-                top: -20%;
-                left: 120%;
-            }
-            50% {
-                top: 120%;
-                left: 120%;
-            }
-            75% {
-                top: 120%;
-                left: -20%;
-            }
-            100% {
-                top: -20%;
-                left: -20%;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Encabezado fijo -->
-    <div class="header-bar">IOSEPH RADIO</div>
+    <!-- Logo centrado -->
+    <div class="logo">
+        <img src="logoR.png" alt="Logo IOSEPH RADIO" width="300">
+    </div>
 
-    <!-- Texto flotante -->
-    <div class="floating-text">IOSEPH RADIO®</div>
+    <!-- Reproductor multimedia -->
+    <div>
+        <audio controls autoplay>
+            <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+    </div>
 
-    <div class="content-wrapper">
-        <header>
-            <p class="slogan">SOMOS JOSEFINOS, SOMOS TU RADIO</p>
-            <p class="slogan">Disfruta de nuestra transmisión en línea 24/7</p>
-        </header>
-
-        <div class="player-container">
-            <p>Reproduciendo ahora:</p>
-            <!-- Cambia el URL en "src" con la URL de tu transmisión en línea -->
-            <audio controls autoplay>
-                <source src="https://stream.zeno.fm/b8swkaaaq9xuv" type="audio/mpeg">
-                Tu navegador no soporta la reproducción de audio.
-            </audio>
-        </div>
-
-        <!-- Texto con enlaces a redes sociales -->
-        <div class="social-text">
-            <p>Contáctanos:</p>
-            <p><a href="https://www.facebook.com/iosephrad" target="_blank">Facebook</a></p>
-            <p><a href="https://www.tiktok.com/@ioseph.radio.sv" target="_blank">TikTok</a></p>
-            <!-- Enlace invisible para WhatsApp -->
-            <p><a href="https://wa.me/50372056495" class="hidden-link" target="_blank">WhatsApp</a></p>
-        </div>
+    <!-- Accesos a redes sociales -->
+    <div class="social-links">
+        <p>Síguenos en nuestras redes:</p>
+        <a href="https://wa.me/72056495" target="_blank" aria-label="WhatsApp">🌐 WhatsApp</a>
+        <a href="https://facebook.com" target="https://www.facebook.com/iosephrad/" aria-label="Facebook">🌐 Facebook</a>
+        <a href="https://instagram.com" target="iosephradio_sv" aria-label="Instagram">🌐 Instagram</a>
+        <a href="https://www.tiktok.com" target=" ioseph.radio.sv" aria-label="TikTok">🌐 TikTok</a>
     </div>
 </body>
 </html>
